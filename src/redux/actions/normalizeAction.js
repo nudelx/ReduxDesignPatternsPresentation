@@ -6,7 +6,6 @@ export const dataNormalized = ({ feature }) => ({
   meta: { feature }
 })
 
-
 export const dataNormalizedFail = ({ feature }) => ({
   type: `${feature} ${DATA_NORMALIZED_FAIL}`,
   meta: { feature }
