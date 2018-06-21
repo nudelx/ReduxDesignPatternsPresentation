@@ -6,7 +6,6 @@ export const CASE = '[Case]'
 export const FETCH_CASES = `${CASE} FETCH`
 export const SET_CASES = `${CASE} SET`
 
-
 // action creator
 export const fetchCases = ({ query }) => ({
   type: FETCH_CASES,
