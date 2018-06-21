@@ -1,6 +1,7 @@
 
 //action feature name
 export const CASE = '[Case]'
+const normalizeKey = 'Id'
 
 // action type
 export const FETCH_CASES = `${CASE} FETCH`
@@ -13,5 +14,6 @@ export const fetchCases = ({ query }) => ({
 })
 export const setCases = ({ cases }) => ({
   type: SET_CASES,
-  payload: cases
+  payload: cases,
+  meta: { normalizeKey,  feature: CASE}
 })
