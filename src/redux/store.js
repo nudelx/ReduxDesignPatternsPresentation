@@ -12,8 +12,8 @@ const rootReducer = combineReducers({ cases, ui, notify })
 
 const composeEnhancers = typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}) : compose
 
-const featureMiddlewares = [casesMiddleware, splitterMiddleware, normalizeMiuddleware]
-const coreMiddlewares = [ apiMiddleware ]
+const featureMiddlewares = [casesMiddleware]
+const coreMiddlewares = [ splitterMiddleware, apiMiddleware, normalizeMiuddleware ]
 
 const enhancer = composeEnhancers(
   applyMiddleware(...featureMiddlewares, ...coreMiddlewares),

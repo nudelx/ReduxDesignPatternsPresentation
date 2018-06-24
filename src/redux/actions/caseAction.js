@@ -11,8 +11,8 @@ export const fetchCases = ({ query }) => ({
   type: FETCH_CASES,
   payload: query
 })
-export const setCases = ({ cases, normalizeKey }) => ({
+export const setCases = ({ cases, normalizeKey, normalizeKeyDataKey }) => ({
   type: SET_CASES,
   payload: cases,
-  meta: { normalizeKey,  feature: CASE}
+  meta: { normalizeKey,  feature: CASE, normalizeKeyDataKey}
 })

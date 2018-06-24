@@ -6,7 +6,7 @@ import {
 
 export const normalizeMiuddleware = ({ dispatch }) => next => action => {
   if (action.type.includes('SET') && action.meta.normalizeKey) {
-
+      console.log(action)
     if (Array.isArray(action.payload)) {
       dispatch(dataNormalized({ feature: action.meta.feature }))
       const data = action.payload.reduce((all, item) => {
@@ -15,8 +15,8 @@ export const normalizeMiuddleware = ({ dispatch }) => next => action => {
       }, {})
       next(
         setCases({
-          cases: data,
-          normalizeKey: null
+          normalizeKey: null,
+          [action.meta.normalizeKeyDataKey]: data
         })
       )
     } else {
