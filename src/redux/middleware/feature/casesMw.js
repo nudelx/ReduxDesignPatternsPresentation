@@ -22,7 +22,7 @@ export const casesMiddleware = ({dispatch}) => (next) => (action) => {
 
     case `${CASE} ${API_ERROR}`:
         next([setNotify({feature: CASE, message: `Case fetch API Error: [${action.payload}]`}), setLoader({ state: false, feature: CASE})])
-        // setTimeout(() => dispatch(setNotify({feature: CASE, message: ''})), 5000)
+        setTimeout(() => dispatch(setNotify({feature: CASE, message: ''})), 5000)
       break;
 
 
