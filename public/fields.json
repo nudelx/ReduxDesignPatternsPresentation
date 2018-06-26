@@ -1,0 +1,37 @@
+[
+  {
+    "Id": "11",
+    "Type": "STRING",
+    "FieldName": "Id"
+  },
+  {
+    "Id": "22",
+    "Type": "BOOLEAN",
+    "FieldName": "IsDeleted"
+  },
+  {
+    "Id": "33",
+    "Type": "NUMBER",
+    "FieldName": "CaseNumber"
+  },
+  {
+    "Id": "44",
+    "Type": "LOOKUP",
+    "FieldName": "ContactId"
+  },
+  {
+    "Id": "55",
+    "Type": "LOOKUP",
+    "FieldName": "AccountId"
+  },
+  {
+    "Id": "66",
+    "Type": "STRING",
+    "FieldName": "RecordTypeId"
+  },
+  {
+    "Id": "77",
+    "Type": "STRING",
+    "FieldName": "Status"
+  }
+]
