@@ -5,7 +5,7 @@ import { setNotify } from '../../actions/notifyAction';
 import { fetchFields } from '../../actions/fieldsActions'
 import { conditionalFetch } from '../../actions/conditionAction'
 
-const url = 'case.json'
+const url = 'case.json1'
 const normalizeKey = 'Id'
 const fieldsCondition = state => !Object.keys(state.fields).length
 

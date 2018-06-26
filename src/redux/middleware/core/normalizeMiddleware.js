@@ -1,4 +1,3 @@
-import { setCases } from '../../actions/caseAction'
 import {
   dataNormalized,
   dataNormalizedFail

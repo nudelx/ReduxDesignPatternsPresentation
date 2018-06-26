@@ -13,12 +13,10 @@ export const fieldsMiddleware = ({dispatch}) => (next) => (action) => {
   switch (action.type) {
 
     case FETCH_FIELDS:
-        debugger
         next([ setLoader({ state: true, feature: FIELD}), apiRequest({ method: 'GET', url,  feature: FIELD})])
       break;
 
     case `${FIELD} ${API_SUCCSES}`:
-    debugger
 
         next([setFields({fields: action.payload, normalizeKey, normalizeKeyDataKey }), setLoader({ state: false, feature: FIELD})])
       break;
