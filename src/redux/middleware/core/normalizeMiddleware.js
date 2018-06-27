@@ -11,7 +11,7 @@ export const normalizeMiuddleware = ({ dispatch }) => next => action => {
         all[item[action.meta.normalizeKey]] = item
         return all
       }, {})
-      action.meta.normalizeKey = null
+      action.meta = { ...action.meta, normalizeKey: null }
       action.payload = data
     } else {
       dispatch(dataNormalizedFail({ feature: action.meta.feature }))

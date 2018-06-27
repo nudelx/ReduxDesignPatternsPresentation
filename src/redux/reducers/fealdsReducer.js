@@ -1,8 +1,8 @@
-import { SET_FIELDS } from '../actions/fieldsActions'
+import { SET } from '../actions/fieldsActions'
 const initState = {}
 
 const stateProcessor = {
-  [SET_FIELDS]: (state, action) => {
+  [SET]: (state, action) => {
      return { ...state, ...action.payload }
   }
 }

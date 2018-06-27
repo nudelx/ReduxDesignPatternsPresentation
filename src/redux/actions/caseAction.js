@@ -3,16 +3,16 @@
 export const CASE = '[Case]'
 
 // action type
-export const FETCH_CASES = `${CASE} FETCH`
-export const SET_CASES = `${CASE} SET`
+export const FETCH = `${CASE} FETCH`
+export const SET = `${CASE} SET`
 
 // action creator
 export const fetchCases = ({ query }) => ({
-  type: FETCH_CASES,
+  type: FETCH,
   payload: query
 })
 export const setCases = ({ cases, normalizeKey, normalizeKeyDataKey }) => ({
-  type: SET_CASES,
+  type: SET,
   payload: cases,
   meta: { normalizeKey,  feature: CASE, normalizeKeyDataKey}
 })
