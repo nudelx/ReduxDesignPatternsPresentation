@@ -7,7 +7,6 @@ const stateProcessor = {
   }
 }
 
-
 export default function (state = initState , action) {
   return stateProcessor[action.type]
   ? stateProcessor[action.type](state ,action)
