@@ -1,8 +1,8 @@
-import { SET_CASES } from '../actions/caseAction'
+import { SET } from '../actions/caseAction'
 const initState = {}
 
 const stateProcessor = {
-  [SET_CASES]: (state, action) => {
+  [SET]: (state, action) => {
      return { ...state, ...action.payload }
   }
 }

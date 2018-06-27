@@ -1,5 +1,5 @@
 import { API_ERROR, API_SUCCSES, apiRequest } from '../../actions/apiAction';
-import { FEATURE_NAME, FETCH_CASES, setCases } from '../../actions/caseAction';
+import { FEATURE_NAME, FETCH, setCases } from '../../actions/caseAction';
 import { setLoader } from '../../actions/uiActions';
 import { setNotify } from '../../actions/notifyAction';
 
@@ -11,7 +11,7 @@ export const casesMiddleware = ({dispatch, getSate}) => (next) => (action) => {
 
   switch (action.type) {
 
-    case FETCH_CASES:
+    case FETCH:
         next([ setLoader({ state: true, feature: FEATURE_NAME}), apiRequest({ method: 'GET', url,  feature: FEATURE_NAME})])
 
       break;
