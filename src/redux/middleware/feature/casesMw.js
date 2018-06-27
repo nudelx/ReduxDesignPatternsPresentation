@@ -1,28 +1,28 @@
 import { API_ERROR, API_SUCCSES, apiRequest } from '../../actions/apiAction';
-import { CASE, FETCH_CASES, setCases } from '../../actions/caseAction';
+import { FEATURE_NAME, FETCH_CASES, setCases } from '../../actions/caseAction';
 import { setLoader } from '../../actions/uiActions';
 import { setNotify } from '../../actions/notifyAction';
 
 const url = 'case.json'
 const normalizeKey = 'Id'
 
-export const casesMiddleware = ({dispatch}) => (next) => (action) => {
+export const casesMiddleware = ({dispatch, getSate}) => (next) => (action) => {
   next(action)
 
   switch (action.type) {
 
     case FETCH_CASES:
-        next([ setLoader({ state: true, feature: CASE}), apiRequest({ method: 'GET', url,  feature: CASE})])
+        next([ setLoader({ state: true, feature: FEATURE_NAME}), apiRequest({ method: 'GET', url,  feature: FEATURE_NAME})])
 
       break;
 
-    case `${CASE} ${API_SUCCSES}`:
-        next([setCases({cases: action.payload, normalizeKey, normalizeKeyDataKey: 'cases' }), setLoader({ state: false, feature: CASE})])
+    case `${FEATURE_NAME} ${API_SUCCSES}`:
+        next([setCases({cases: action.payload, normalizeKey, normalizeKeyDataKey: 'cases' }), setLoader({ state: false, feature: FEATURE_NAME})])
       break;
 
-    case `${CASE} ${API_ERROR}`:
-        next([setNotify({feature: CASE, message: `Case fetch API Error: [${action.payload}]`}), setLoader({ state: false, feature: CASE})])
-        setTimeout(() => dispatch(setNotify({feature: CASE, message: ''})), 5000)
+    case `${FEATURE_NAME} ${API_ERROR}`:
+        next([setNotify({feature: FEATURE_NAME, message: `Case fetch API Error: [${action.payload}]`}), setLoader({ state: false, feature: FEATURE_NAME})])
+        // setTimeout(() => dispatch(setNotify({feature: FEATURE_NAME, message: ''})), 5000)
       break;
 
 
