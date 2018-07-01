@@ -17,12 +17,12 @@ export const casesMiddleware = ({dispatch, getSate}) => (next) => (action) => {
       break;
 
     case `${FEATURE_NAME} ${API_SUCCSES}`:
-        next([setCases({cases: action.payload, normalizeKey, normalizeKeyDataKey: 'cases' }), setLoader({ state: false, feature: FEATURE_NAME})])
+        next([setCases({cases: action.payload, normalizeKey  }), setLoader({ state: false, feature: FEATURE_NAME})])
       break;
 
     case `${FEATURE_NAME} ${API_ERROR}`:
         next([setNotify({feature: FEATURE_NAME, message: `Case fetch API Error: [${action.payload}]`}), setLoader({ state: false, feature: FEATURE_NAME})])
-        // setTimeout(() => dispatch(setNotify({feature: FEATURE_NAME, message: ''})), 5000)
+        setTimeout(() => dispatch(setNotify({feature: FEATURE_NAME, message: ''})), 5000)
       break;
 
 
