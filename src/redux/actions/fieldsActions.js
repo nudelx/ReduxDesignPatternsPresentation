@@ -1,10 +1,10 @@
 
 //action feature name
-export const FEATURE = '[FIELD]'
+export const FEATURE_NAME = '[FIELD]'
 
 // action type
-export const FETCH = `${FEATURE} FETCH`
-export const SET = `${FEATURE} SET`
+export const FETCH = `${FEATURE_NAME} FETCH`
+export const SET = `${FEATURE_NAME} SET`
 
 // action creator
 export const fetchFields = ({ query }) => ({
@@ -14,5 +14,5 @@ export const fetchFields = ({ query }) => ({
 export const setFields = ({ fields, normalizeKey, normalizeKeyDataKey }) => ({
   type: SET,
   payload: fields,
-  meta: { normalizeKey,  feature: FEATURE, normalizeKeyDataKey}
+  meta: { normalizeKey,  feature: FEATURE_NAME, normalizeKeyDataKey}
 })
