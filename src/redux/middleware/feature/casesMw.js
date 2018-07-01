@@ -5,7 +5,7 @@ import { setNotify } from '../../actions/notifyAction';
 import { fetchFields } from '../../actions/fieldsActions'
 import { conditionalFetch } from '../../actions/conditionAction'
 
-const url = 'case.jsons'
+const url = 'case.json'
 const normalizeKey = 'Id'
 const fieldsCondition = state => !Object.keys(state.fields).length
 
@@ -16,7 +16,7 @@ export const casesMiddleware = ({ dispatch, getState }) => (next) => (action) =>
 
     case FETCH:
         next([ setLoader({ state: true, feature: FEATURE_NAME}), apiRequest({ method: 'GET', url,  feature: FEATURE_NAME})])
-        // next(conditionalFetch({ feature: FEATURE_NAME, conditions:[{ condition: fieldsCondition, action: fetchFields({}) }] } ) )
+        next(conditionalFetch({ feature: FEATURE_NAME, conditions:[{ condition: fieldsCondition, action: fetchFields({}) }] } ) )
       break;
 
     case `${FEATURE_NAME} ${API_SUCCSES}`:
