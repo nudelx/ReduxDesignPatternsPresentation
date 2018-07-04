@@ -1,4 +1,3 @@
-
 //action feature name
 export const FEATURE_NAME = '[Case]'
 
@@ -11,8 +10,8 @@ export const fetchCases = ({ query }) => ({
   type: FETCH,
   payload: query
 })
-export const setCases = ({ cases, normalizeKey, normalizeKeyDataKey }) => ({
+export const setCases = ({ cases, normalizeKey }) => ({
   type: SET,
   payload: cases,
-  meta: { normalizeKey,  feature: FEATURE_NAME, normalizeKeyDataKey}
+  meta: { normalizeKey, feature: FEATURE_NAME }
 })
