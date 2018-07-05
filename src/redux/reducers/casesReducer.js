@@ -1,7 +1,7 @@
 import { SET } from '../actions/caseAction'
 const initState = {}
 
-// *** this part is can be imported form other module
+// *** this part is the same in all reducers, can be imported form other module
 const stateProcessorCreator = FEATURE_ACTION_TYPE => ({
   [FEATURE_ACTION_TYPE]: (state, action) => {
     return { ...state, ...action.payload }
