@@ -1,6 +1,6 @@
 // action types
 export const API_REQUEST = 'API_REQUEST'
-export const API_SUCCSES = 'API_SUCCSES'
+export const API_SUCCESS = 'API_SUCCESS'
 export const API_ERROR = 'API_ERROR'
 
 // action creators
@@ -11,7 +11,7 @@ export const apiRequest = ({ body, method, url, feature }) => ({
 })
 
 export const apiSuccsess = ({ result, feature }) => ({
-  type: `${feature} ${API_SUCCSES}`,
+  type: `${feature} ${API_SUCCESS}`,
   payload: result,
   meta: { feature }
 })

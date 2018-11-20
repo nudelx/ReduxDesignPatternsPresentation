@@ -1,4 +1,4 @@
-import { API_ERROR, API_SUCCSES, apiRequest } from '../../actions/apiAction';
+import { API_ERROR, API_SUCCESS, apiRequest } from '../../actions/apiAction';
 import { FEATURE_NAME, FETCH, setCases } from '../../actions/caseAction';
 import { setLoader } from '../../actions/uiActions';
 import { setNotify } from '../../actions/notifyAction';
@@ -19,7 +19,7 @@ export const casesMiddleware = ({ dispatch, getState }) => (next) => (action) =>
         next(conditionalFetch({ feature: FEATURE_NAME, conditions:[{ condition: fieldsCondition, action: fetchFields({}) }] } ) )
       break;
 
-    case `${FEATURE_NAME} ${API_SUCCSES}`:
+    case `${FEATURE_NAME} ${API_SUCCESS}`:
         next([setCases({cases: action.payload, normalizeKey  }), setLoader({ state: false, feature: FEATURE_NAME})])
       break;
 
